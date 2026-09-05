@@ -16,25 +16,14 @@ while True:
         print("Added to tasks!")
 
     elif choice == 2:
-        for t in range(len(tasks)):
-            print(f"{t+1}. {tasks[t]}")
+        for index, item in enumerate(my_list, start=1):
+            print(f"{index}. {item}")
         print("\n\n")
             
     elif choice == 3:
-        try:
-            for t in range(len(tasks)):
-                print(f"{t+1}. {tasks[t]}")
-            taskRem = int(input("Which task would you like to remove: "))
-            if type(taskRem) == str:
-                print("Pick a number!")
-            else:
-                tasks.pop(taskRem - 1)
-            print("Task Removed!\nHere is the new List!")
-            for t in range(len(tasks)):
-                print(f"{t+1}. {tasks[t]}")
-            taskRem = int(input("Which task would you like to remove: "))
-        except IndexError:
-            print("You haven't entered any tasks yet bitch")
+
+        tr = input("Which task would you like to remove?: ")
+
 
     elif choice == 4:
         print("Goodbye!")

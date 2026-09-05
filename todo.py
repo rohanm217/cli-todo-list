@@ -16,7 +16,7 @@ while True:
         print("Added to tasks!")
 
     elif choice == 2:
-        for index, item in enumerate(my_list, start=1):
+        for index, item in enumerate(tasks, start=1):
             print(f"{index}. {item}")
         print("\n\n")
             

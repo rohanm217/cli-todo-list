@@ -21,8 +21,13 @@ while True:
         print("\n\n")
             
     elif choice == 3:
-
+        for index, item in enumerate(tasks, start=1):
+            print(f"{index}. {item}")
         tr = input("Which task would you like to remove?: ")
+        if tr not in tasks:
+            print("Not in To-Do List")
+        tasks.pop(int(tr)-1)
+        print("Task")
 
 
     elif choice == 4:

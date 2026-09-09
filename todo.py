@@ -37,24 +37,17 @@ while True:
             print("The file doesn't exist yet")
             lines = []
 
-        new_lines = []
-        for line in lines:
-            if removed_task not in line:
-                new_lines.append(line)
-
         with open("task.txt", "w") as file:
-            file.writelines(new_lines)
+            count = 1
+            for line in lines:
+                actual_word = line.split(". ")[-1].strip()
+
+                if actual_word != removed_task:
+                    file.write(f"{count}. {actual_word}\n")
+                    count += 1
+
 
         print(f"Removed {removed_task} from the task list.")
-
-
-        # for index, item in enumerate(tasks, start=1):
-        #     print(f"{index}. {item}")
-        # tr = input("Which task would you like to remove?: ")
-        # if tasks[int(tr)-1] not in tasks:
-        #     print("Not in To-Do List")
-        # tasks.pop(int(tr)-1)
-        # print("Task Removed")
 
 
     elif choice == 4:

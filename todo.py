@@ -1,11 +1,11 @@
 tasks = []
 
-
 while True:
+
 
     print("TODO LIST")
     print()
-    print("1. Add Task\n2. View Tasks\n3. Remove Task\n4. Quit")
+    print("1. Add Task\n2. View Tasks\n3. Remove Task\n4. Edit task\n5. Quit")
 
     choice = int(input("What would you like to pick?: "))
     print()
@@ -50,7 +50,25 @@ while True:
 
         print(f"Removed {removed_task} from the task list.")
 
+
     elif choice == 4:
+
+        edited_num = input("Enter the number for the task that you would like to edit: ")
+
+        try:
+            with open("task.txt", "r") as file:
+                edit_lines = file.readlines()
+        except FileNotFoundError:
+            print("The file doesn't exist yet")
+            lines = []
+
+        edited_task = input("Enter what you would like to change your task to?: ")
+
+
+
+
+
+    elif choice == 5:
         print("Goodbye!")
         break
 

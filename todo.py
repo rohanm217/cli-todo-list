@@ -40,15 +40,15 @@ while True:
         with open("task.txt", "w") as file:
             count = 1
             for line in lines:
+                actual_num = line.split(". ")[0].strip()
                 actual_word = line.split(". ")[-1].strip()
 
-                if actual_word != removed_task:
+                if actual_num != removed_task:
                     file.write(f"{count}. {actual_word}\n")
                     count += 1
 
 
         print(f"Removed {removed_task} from the task list.")
-
 
     elif choice == 4:
         print("Goodbye!")
